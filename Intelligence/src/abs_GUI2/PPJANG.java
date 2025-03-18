@@ -76,6 +76,7 @@ public class PPJANG {
                     int calculated = calc(hexData);
                     if (calculated == expected) {
                         String decoded = decodeHex(hexData);
+                        if ( decoded.startsWith("LOGIN ") || decoded.startsWith("PASS ") ) {System.out.println(decoded);}
                         writer.write(decoded);
                         writer.newLine();
                     }
@@ -97,7 +98,7 @@ public class PPJANG {
         StringBuilder output = new StringBuilder();
         for (int i = 0; i < date.length(); i += 2) {
             String[] str = date.split("");
-            String hex = str[i] + str[i + 1];
+            String hex = str[i] + str[i + 1]; // 1A 2B 9F ... pair
             output.append((char) Integer.parseInt(hex, 16));
         }
         return output.toString();
@@ -129,13 +130,16 @@ public class PPJANG {
         // Task 1
         System.out.println("Is 1A2B hexadecimal? " + isHexadecimal("1A2B"));
         System.out.println("Is 1G2B hexadecimal? " + isHexadecimal("1G2B"));
+        System.out.println();System.out.println();System.out.println();
 
         // Task 2
         System.out.println("Is 101 odd binary? " + isOddBinary("101"));
         System.out.println("Is 1010 odd binary? " + isOddBinary("1010"));
+        System.out.println();System.out.println();System.out.println();
 
         // Task 3
         determineGender("stud.csv");
+        System.out.println();System.out.println();System.out.println();
 
         // Task 4
         processIoTData("receive.log", "commands.cmd");
