@@ -171,9 +171,9 @@ public class Task3 {
         System.out.println(car4);
         System.out.println();
 
-        CarRegister registerWA = null;
-        CarRegister registerKR = null;
-        CarRegister registerGD = null;
+        CarRegister registerWA;
+        CarRegister registerKR;
+        CarRegister registerGD; // null
 
         try {
             registerWA = new CarRegister("WA");

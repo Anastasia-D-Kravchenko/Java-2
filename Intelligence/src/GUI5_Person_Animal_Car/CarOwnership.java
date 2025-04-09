@@ -99,7 +99,7 @@ public class CarOwnership {
         System.out.println("* SKODA WA00001 BMW WA12690 MAZDA WA01234");
         System.out.println("*/");
 
-        for (Map.Entry<Person, List<Car>> entry : carMap.entrySet()) {
+        for (Map.Entry<Person, List<Car>> entry : carMap.entrySet()) { // could be var -------
             Person owner = entry.getKey();
             List<Car> cars = entry.getValue();
             System.out.print(owner + " -> ");
